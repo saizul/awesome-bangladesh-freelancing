@@ -20,8 +20,7 @@ accept = ["200..=299", "301", "302", "307", "308", "403", "429", "999"]
 
 # Only http(s) links matter for this list.
 scheme = ["https", "http"]
-exclude_mail = true
-include_fragments = false
+include_mail = false
 
 # Do not check badge/service endpoints that are not part of the curated list.
 exclude = [
@@ -29,6 +28,9 @@ exclude = [
   '^https?://localhost',
   '^https?://127\.0\.0\.1',
   '^https?://example\.(com|org|net)',
+  # Bot-protected sites that answer automated requests with 400/401 although the pages exist.
+  '^https://(www\.|developers\.)?facebook\.com',
+  '^https://unsplash\.com',
 ]
 
 # Cache results between runs (the workflow also persists .lycheecache).
