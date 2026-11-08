@@ -21,6 +21,10 @@ Thanks for helping Bangladeshi freelancers! This list stays useful only if it st
 5. Do not add anything that encourages policy violations (fake accounts, account renting, fake reviews). Such PRs will be closed.
 6. Tax/legal entries: link official government or central-bank pages only, and do not summarise rules as advice.
 
+## Automated link check
+
+Pull requests that touch Markdown files, and a weekly scheduled run (Mondays, 03:00 UTC), run [lychee](https://github.com/lycheeverse/lychee) with the settings in [`lychee.toml`](lychee.toml). Responses such as 403, 429 and 999 are accepted because bot-protected sites often block automated checkers. A scheduled run that finds dead links opens an issue labelled `link-check`. To check locally: `lychee --config lychee.toml README.md`.
+
 ## Pull request checklist
 
 - [ ] URL returns 2xx/3xx (or a justified 403)
