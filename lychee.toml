@@ -31,6 +31,9 @@ exclude = [
   # Bot-protected sites that answer automated requests with 400/401 although the pages exist.
   '^https://(www\.|developers\.)?facebook\.com',
   '^https://unsplash\.com',
+  # Government sites that serve an incomplete TLS certificate chain (browsers repair it, CI runners do not).
+  '^https://(www\.)?bcc\.gov\.bd',
+  '^https://(www\.)?btrc\.gov\.bd',
 ]
 
 # Cache results between runs (the workflow also persists .lycheecache).
